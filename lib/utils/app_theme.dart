@@ -24,7 +24,7 @@ class AppTheme {
       brightness: Brightness.dark,
 
       primary: Colors.white,
-      onPrimary: Colors.black,
+      onPrimary: Color(0xFF171B1E),
 
       secondary: Colors.white,
       onSecondary: Colors.black,
@@ -33,7 +33,7 @@ class AppTheme {
       onError: Colors.white,
 
       surface: Colors.black,
-      onSurface: Color.fromARGB(255, 31, 31, 31),
+      onSurface: Colors.white,
     ),
   );
 }
