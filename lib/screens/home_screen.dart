@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_list/model/task.dart';
+import 'package:flutter_todo_list/services/database_service.dart';
 import 'package:flutter_todo_list/widgets/creation_form.dart';
 import 'package:flutter_todo_list/widgets/todo_list.dart';
 
@@ -22,14 +24,28 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
-      body: const TodoList(),
+      body: TodoList(
+        onRefresh: () {
+          setState(() {});
+        },
+      ),
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
             context: context,
             builder: (context) {
-              return CreationForm(controller: nameController, onPressed: () {});
+              return CreationForm(
+                controller: nameController,
+                onPressed: () async {
+                  await DatabaseService.addTask(
+                    Task(id: null, name: nameController.text, isChecked: false),
+                  );
+                  nameController.clear();
+                  setState(() {});
+                  Navigator.pop(context);
+                },
+              );
             },
           );
         },
