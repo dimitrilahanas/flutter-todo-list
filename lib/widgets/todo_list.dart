@@ -19,13 +19,16 @@ class TodoList extends StatelessWidget {
             itemCount: tasks.length,
             itemBuilder: (context, index) {
               final task = tasks[index];
-              return TodoTile(
-                isChecked: task.isChecked,
-                task: task,
-                onDeletePressed: () async {
-                  await DatabaseService.deleteTask(task);
-                  onRefresh();
-                }, 
+              return Padding(
+                padding: const EdgeInsets.only(top: 30),
+                child: TodoTile(
+                  isChecked: task.isChecked,
+                  task: task,
+                  onDeletePressed: () async {
+                    await DatabaseService.deleteTask(task);
+                    onRefresh();
+                  }, 
+                ),
               );
             },
           );
