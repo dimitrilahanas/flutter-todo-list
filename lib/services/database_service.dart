@@ -11,7 +11,7 @@ class DatabaseService {
       join(await getDatabasesPath(), _dbName),
       onCreate: (db, version) async => await db.execute('''
       CREATE TABLE Tasks (
-        id INTEGER PRIMARY KEY,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL, 
         isChecked INTEGER NOT NULL
       );'''),
@@ -51,7 +51,7 @@ class DatabaseService {
   static Future<List<Task>?> getAllTasks() async {
     final db = await _getDB();
     final List<Map<String,dynamic>> maps = await db.query("Tasks");
-    if(maps.isNotEmpty){
+    if(maps.isEmpty){
       return null;
     }
     return List.generate(maps.length, (index) => Task.fromJson(maps[index]));
