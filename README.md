@@ -1,4 +1,4 @@
-# Flutter SQLite To-Do App
+# Flutter-ToDo-App
 
 A Flutter to-do list app using SQLite to practice local data persistence and state management.
 
