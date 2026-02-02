@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_todo_list/model/task.dart';
 
 class TodoTile extends StatelessWidget {
   final bool isChecked;
-  final String taskName;
+  Task task;
   final void Function(bool?)? onCheckboxChanged;
   final void Function() onDeletePressed;
 
-  const TodoTile({super.key, required this.isChecked, required this.taskName, this.onCheckboxChanged, required this.onDeletePressed});
+  TodoTile({super.key, required this.isChecked, required this.task, this.onCheckboxChanged, required this.onDeletePressed});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,9 @@ class TodoTile extends StatelessWidget {
           motion: StretchMotion(),
           children: [
             SlidableAction(
-              onPressed: (context) => onDeletePressed,
+              onPressed: (context) { 
+                onDeletePressed();
+              },
               icon: Icons.delete,
             ),
           ],
@@ -34,7 +37,7 @@ class TodoTile extends StatelessWidget {
               Checkbox(value: isChecked, onChanged: onCheckboxChanged),
 
               Text(
-                taskName,
+                task.name,
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
                   letterSpacing: 0,
