@@ -21,6 +21,7 @@ class TodoTile extends StatelessWidget {
           motion: StretchMotion(),
           children: [
             SlidableAction(
+              backgroundColor: Theme.of(context).colorScheme.onPrimary,
               onPressed: (context) { 
                 onDeletePressed();
               },
