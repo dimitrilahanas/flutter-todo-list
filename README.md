@@ -1,6 +1,9 @@
 # Flutter-ToDo-App
 
 A Flutter to-do list app using SQLite to practice local data persistence and state management.
+⚠️ Note: This project is for learning purposes.
+I created it while learning Flutter, so the code may be messy or not follow best practices.
+Use it as a reference for my learning journey, not as production-ready code.
 
 ---
 
@@ -21,7 +24,7 @@ The app allows users to add, view, complete, and delete tasks, with all data per
 - Add new tasks
 - View a list of tasks
 - Mark tasks as completed
-- Delete tasks
+- Delete tasks by sliding tile
 - Persistent local storage using SQLite
 - Clean and simple Material UI
 
