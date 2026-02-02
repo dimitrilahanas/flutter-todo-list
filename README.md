@@ -56,29 +56,9 @@ This project was created to practice:
 
 ---
 
-## 🚀 Future Improvements
-
-- Edit existing tasks
-- Filter tasks (All / Completed / Incomplete)
-- Confirm before deleting tasks
-- Improve UI with animations
-- Use a state management solution (Provider / Riverpod)
-- Add search functionality
-
----
-
-## 🧪 Status
-
-This project is currently under development and intended for learning purposes.
-
----
-
-## 📷 Screenshots
-
-_(Coming soon)_
-
----
-
-## 📄 License
-
-This project is open for learning and personal use.
+## Screenshots
+<p align="center">
+<img src="1.png" alt="Main Page" width="250"/>
+<img src="2.png" alt="Main Page" width="250"/>
+<img src="3.png" alt="Creation Page" width="250"/>
+</p>
