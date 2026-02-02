@@ -28,17 +28,6 @@ class DatabaseService {
     );
   }
 
-  static Future<int> updateTask(Task task) async {
-    final db = await _getDB();
-    return await db.update(
-      "Tasks",
-      task.toJson(),
-      where: 'id = ?',
-      whereArgs: [task.id],
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
-  }
-
   static Future<int> deleteTask(Task task) async {
     final db = await _getDB();
     return await db.delete(
